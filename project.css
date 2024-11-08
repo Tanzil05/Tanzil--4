@@ -1,0 +1,657 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+:root {
+    --main-color: #6f4f31; /* Coffee Brown */
+    --secondary-color: #f2e3c6; /* Light Coffee Cream */
+    --accent-color: #c1a56d; /* Gold Accent */
+    --highlight-color: #e94e77; /* Pink Accent for hover effects */
+    --border-radius: 12px;
+    --transition-speed: 0.3s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    text-transform: capitalize;
+    transition: all var(--transition-speed) ease-in-out;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+
+section {
+    padding: 5rem 10%;
+    position: relative;
+}
+
+/* Heading Style */
+.heading {
+    font-size: 7rem;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 3px var(--main-color);
+    letter-spacing: 0.1rem;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 4rem;
+}
+
+.heading span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: var(--highlight-color);
+}
+
+/* Button Hover Effects */
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border: 2px solid var(--main-color);
+    background: none;
+    color: var(--main-color);
+    font-size: 1.7rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5rem;
+    margin-top: 2rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: var(--highlight-color);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+/* HEADER */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--main-color); /* Coffee Brown Background */
+    padding: 1.5rem 8%;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+/* Menu Button (for mobile view) */
+#menu-btn {
+    display: none;
+    font-size: 2.5rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    #menu-btn {
+        display: block;
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: var(--main-color);
+        padding: 2rem 0;
+    }
+
+    .navbar a {
+        margin: 1rem 0;
+        font-size: 2rem;
+        text-align: center;
+        color: #fff;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+}
+
+/* Navbar links */
+.header .navbar a {
+    margin: 0 1.5rem;
+    font-size: 1.8rem;
+    color: #fff; /* White color for text */
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect on navbar links */
+.header .navbar a:hover {
+    color: var(--accent-color); /* Gold color for hover effect */
+    transform: translateY(-5px); /* Slight upward motion with more effect */
+}
+
+/* Logo styling */
+.header .logo {
+    display: flex;
+    align-items: center;
+    font-size: 2.8rem;
+    color: #fff; /* White logo text */
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+/* Logo text hover effect */
+.header .logo:hover {
+    color: var(--accent-color); /* Gold color on hover */
+}
+
+/* Logo icon styling */
+.header .logo-img {
+    height: 100px; /* Adjust size of logo icon */
+    width: auto;  /* Maintain aspect ratio */
+    margin-right: 1rem; /* Add some space between logo text and icon */
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Logo icon hover effect */
+.header .logo-img:hover {
+    transform: scale(1.1); /* Slight scaling effect */
+    filter: brightness(1.2); /* Brighten logo icon on hover */
+}
+
+/* Responsive Design for the Navbar */
+@media (max-width: 768px) {
+    .navbar a {
+        font-size: 2rem; /* Adjust size for mobile */
+    }
+
+    .header {
+        padding: 1.5rem 5%; /* Adjust padding for smaller screens */
+    }
+}
+
+/* Additional Transition Effects */
+.header .logo, .header .navbar a {
+    transition: all 0.3s ease;
+}
+
+/* Hamburger Menu Button (Mobile) */
+#menu-btn {
+    font-size: 3rem;
+    color: #fff; /* White color for menu button */
+    cursor: pointer;
+    display: none;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect on menu button */
+#menu-btn:hover {
+    color: var(--accent-color); /* Gold color for hover */
+}
+
+@media (max-width: 768px) {
+    #menu-btn {
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    #menu-btn {
+        display: block;
+    }
+}
+
+/* HOME */
+
+/* Home Section */
+.home {
+    min-height: 100vh;
+    padding-top: 12rem;
+    background: url(../image/home-bg.jpg) no-repeat center/cover;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    transition: background 0.5s ease;
+}
+
+/* Hover effect for the background image */
+.home:hover {
+    background: url(../image/home-bg-hover.jpg) no-repeat center/cover; /* Optional: Different background on hover */
+}
+
+/* Content Section within Home */
+.home .row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+/* Content Block Styling */
+.home .row .content {
+    flex: 1 1 40rem;
+    color: var(--secondary-color);
+    z-index: 10;
+    transition: transform 0.5s ease-in-out, color 0.3s ease;
+}
+
+/* Heading Styling */
+.home .row .content h3 {
+    font-size: 5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect on Heading */
+.home .row .content h3:hover {
+    color: #ff4d4d; /* Bright Red for Hover */
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.7);
+    transform: translateY(-5px); /* Slight lift effect */
+}
+
+/* Image Styling */
+.home .row .image img {
+    height: 40rem;
+    transition: transform 0.5s ease, filter 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+/* Hover Effect on Image */
+.home .row .image img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.3);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    opacity: 0.9;
+}
+
+/* Add an overlay effect for images */
+.home .row .image img::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3); /* Slight dark overlay */
+    border-radius: 15px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.home .row .image img:hover::before {
+    opacity: 1; /* Show overlay on hover */
+}
+
+/* Make content text more engaging with color transitions */
+.home .row .content p {
+    font-size: 2rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 2rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover Effect on Paragraph */
+.home .row .content p:hover {
+    color: rgba(255, 255, 255, 1); /* Full white text on hover */
+    transform: translateY(-3px);
+}
+
+/* Add animated underline effect for any links */
+.home .row .content a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover Effect on Links */
+.home .row .content a:hover {
+    color: var(--highlight-color);
+    transform: translateX(3px);
+}
+
+.home .row .content a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--highlight-color);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+/* On hover, animate underline to appear */
+.home .row .content a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Add transition on the overall content */
+.home .row .content:hover {
+    transform: translateY(-10px);
+}
+
+.image-slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding: 2rem 0;
+}
+
+.image-slider img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.5s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+    border: 4px solid transparent;
+    object-fit: cover;
+}
+
+/* Image Hover Effect */
+.image-slider img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    filter: brightness(1.2);
+    border: 4px solid #e94e77; /* Pink border on hover */
+}
+
+/* Optional: Add Hover Effect for Image Titles if Any */
+.image-slider img::after {
+    content: attr(alt);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.image-slider img:hover::after {
+    opacity: 1;
+}
+
+
+/* ABOUT */
+
+.about .row {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.about .row .content {
+    flex: 1 1 50rem;
+}
+
+.about .row .content .title {
+    color: var(--main-color);
+    font-size: 3.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.about .row .content .title::after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 2px;
+    background: var(--highlight-color);
+    bottom: -8px;
+    left: 0;
+}
+
+.about .row .content p {
+    color: var(--main-color);
+    font-size: 1.8rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.about .row .content .icons-container {
+    display: flex;
+    gap: 2rem;
+}
+
+.about .row .content .icons {
+    text-align: center;
+    background: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 2px solid var(--main-color);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.about .row .content .icons:hover {
+    background-color: var(--highlight-color);
+    transform: translateY(-5px);
+}
+
+.about .row .content .icons img {
+    height: 5rem;
+    margin-bottom: 1rem;
+}
+
+.about .row .content .icons h3 {
+    color: var(--main-color);
+    font-size: 1.7rem;
+}
+
+/* MENU */
+
+.menu {
+    background: url(../image/menu-bg.jpg) no-repeat center/cover;
+    padding: 10rem 0;
+    background-size: cover;
+}
+
+.menu .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: center;
+}
+
+.menu .box-container .box {
+    background: rgba(255, 255, 255, 0.7);
+    border: 2px solid var(--main-color);
+    border-radius: var(--border-radius);
+    padding: 3rem;
+    max-width: 30rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    text-align: center;
+}
+
+.menu .box-container .box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    background-color: var(--highlight-color);
+}
+
+.menu .box-container .box img {
+    height: 12rem;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.menu .box-container .box img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+.menu .box-container .box .content h3 {
+    color: var(--main-color);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+.menu .box-container .box .content h3:hover {
+    color: var(--highlight-color);
+}
+
+.menu .box-container .box .content p {
+    color: var(--main-color);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.menu .box-container .box .content span {
+    color: var(--accent-color);
+    font-size: 2rem;
+}
+
+/* REVIEW */
+
+.review .review-slider .box {
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    border: 2px solid var(--main-color);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.review .review-slider .box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    background-color: var(--highlight-color);
+}
+
+.review .review-slider .box img {
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.review .review-slider .box .stars {
+    margin-bottom: 1rem;
+}
+
+.review .review-slider .box .stars i {
+    color: var(--accent-color);
+}
+
+.review .review-slider .box p {
+    color: var(--main-color);
+    font-size: 1.6rem;
+    line-height: 1.8;
+}
+
+.review .review-slider .box h3 {
+    font-size: 2.2rem;
+    color: var(--main-color);
+}
+
+/* BOOK */
+
+.book {
+    background: url(../image/book-bg.jpg) no-repeat center/cover;
+    padding: 12rem 0;
+}
+
+.book form {
+    margin: 0 auto;
+    max-width: 60rem;
+    padding: 4rem;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    border: 2px solid var(--main-color);
+}
+
+.book form .box {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.7rem;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    margin: 1rem 0;
+    border-radius: 5px;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.book form .box:focus {
+    border-color: var(--highlight-color);
+    background-color: var(--secondary-color);
+}
+
+/* Footer */
+.footer {
+    padding: 4rem 0;
+    background: var(--main-color);
+    color: #fff;
+    text-align: center;
+}
+
+.footer .branches ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+.footer .branches ul li {
+    font-size: 1.6rem;
+    transition: color 0.3s ease;
+}
+
+.footer .branches ul li:hover {
+    color: var(--highlight-color);
+}
+
+.footer .contact {
+    padding: 2rem 0;
+}
+
+.footer .contact a {
+    color: var(--accent-color);
+    font-size: 2rem;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.footer .contact a:hover {
+    color: var(--highlight-color);
+}
+
+.footer .credit {
+    font-size: 1.4rem;
+    color: var(--secondary-color);
+    padding-top: 2rem;
+}
+
